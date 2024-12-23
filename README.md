@@ -14,6 +14,7 @@ Welcome to the "Build AI-Enabled Intelligent Data Apps" repository! This reposit
 2. You have completed the [Setup SAP Build Code](https://developers.sap.com/tutorials/build-code-setup.html) tutorial.
    1. SAP Business Application Studio subscription, plan build-code
    2. SAP Build Code subscription, plan standard
+   3. The Dev Space must include the Additional Extensions: SAP HANA Database Explorer and SAP HANA Tools
 3. You have to set up [SAP HANA Cloud Instance](https://developers.sap.com/tutorials/hana-cloud-deploying.html)
    1. SAP HANA Cloud, plan hana (or hana-free)
    2. SAP HANA Cloud subscription, plan tools
