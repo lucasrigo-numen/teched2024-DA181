@@ -58,7 +58,7 @@ In this exercise, you will extend your CAP service with the consumption of an ex
 
 ![alt text]({C2A0C7F6-67EB-4BA2-AF39-EDEEE4421B16}.png)
 
-9. In your project soruce code  db/schema.cds section, companre the code to the one below.
+9. In your project source code  db/schema.cds section, compare the code to the one below.
 
 ````
 NOTE: Make sure to check the namespace of your project. You will have to replace it with your own namespace of your project.  
@@ -111,7 +111,7 @@ annotate Mitigations with @assert.unique :
 
 ```
 
-6. Replace the code snippet of srv/service.cds to the below given code. With this code you can now create a projection of your new service.Of the many entities and properties in these entities that are defined in the API_BUSINESS_PARTNER service, you just look at one of the entities (A_BusinessPartner) and just three of its properties - BusinessPartner, LastName, and FirstName - so that your projection is using a subset of everything the original service has to offer.
+6. If needed, replace the code snippet of _srv/service.cds_ to the below given code. With this code you can now create a projection of your new service. Of the many entities and properties in these entities that are defined in the API_BUSINESS_PARTNER service, you just look at one of the entities (A_BusinessPartner) and just three of its properties - BusinessPartner, LastName, and FirstName - so that your projection is using a subset of everything the original service has to offer.
 
 ```cds
 using { BusinessPartnerA2X } from './external/BusinessPartnerA2X.cds';
@@ -164,13 +164,16 @@ Now you have a new service exposed with a definition based on the imported CDS f
 
 <br>![](/exercises/ex4/ex4.1//images/copyapi.png)
 
-4. Go to your project source code in the SAP Build Code and add the below and replace the <YOUR-API-KEY> with the api key copied from the SAP Business Accerlator Hub. Your project > env > env2
+4. Go to your project source code in the SAP Build Code and add the below and replace the <YOUR-API-KEY> with the api key copied from the SAP Business Accerlator Hub. Your _project > env > .env2_
 
 ```
 apikey=<YOUR-API-KEY>
 ```
 You are going to use the API key to call the Business Partner API of the sandbox system provided through the SAP Business Accelerator Hub.
 ![alt text](image-5.png)
+
+
+Add the same entry in _.env1_ file
 
 5. Open the package.json file and add the credentials configuration to the API_BUSINESS_PARTNER configuration.
 
@@ -186,7 +189,7 @@ You are going to use the API key to call the Business Partner API of the sandbox
 
 <br>![](/exercises/ex4/ex4.1//images/json.png)
 
-7. Open service.js and replace the following.
+7. Open service.js and add the highlited code to properly handle the Business Partner external service.
 
 ```javascript
 const LCAPApplicationService = require('@sap/low-code-event-handler');
@@ -199,13 +202,15 @@ class techedreviseddemoSrv extends LCAPApplicationService {
            await risks_Logic(results, request);
        });
 
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
        // connect to remote service
        const BPsrv = await cds.connect.to("BusinessPartnerA2X");
        const { A_BusinessPartner } = this.entities;
        /**
-    * Event-handler for read-events on the BusinessPartners entity.
-    * Each request to the API Business Hub requires the apikey in the header.
-    */
+        * Event-handler for read-events on the BusinessPartners entity.
+        * Each request to the API Business Hub requires the apikey in the header.
+        */
        this.on("READ", A_BusinessPartner, async (req) => {
            // The API Sandbox returns alot of business partners with empty names.
            // We don't want them in our application
@@ -218,6 +223,8 @@ class techedreviseddemoSrv extends LCAPApplicationService {
                },
            });
        });
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
 
        return super.init();
    }
@@ -228,9 +235,7 @@ module.exports = {
 };
 ```
 
-You've now created a custom handler for your service. This time it called on for the READ event.
-
-The handler is invoked when your BusinessPartner service is called for a READ, so whenever there’s a request for business partner data, this handler is called. It ensures the request for the business partner is directed to the external business partner service. Furthermore, you have added a where clause to the request, which selects only business partners where the first and last name is set.
+The custom handler is invoked when your BusinessPartner service is called for a READ, so whenever there’s a request for business partner data, this handler is called. It ensures the request for the business partner is directed to the external business partner service. Furthermore, you have added a where clause to the request, which selects only business partners where the first and last name is set.
 
 ## Summary
 
