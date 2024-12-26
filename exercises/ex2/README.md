@@ -52,7 +52,28 @@ Generate sample data. for risks and mitigations
 3. Go to Data editor and review the data.
 
 
+# 2.3 Add Initial Data on Data Editor
 
+1. Open the Risks entity, then INITIAL DATA tab
+
+![alt text]({FE7255FC-AF99-4224-A56A-47DA10941159}.png)
+
+2. Click on Add button and fill in the fields to create a record
+
+![alt text]({FE7255FC-AF99-4224-A56A-47DA10941159}.png)
+
+
+3. Open the Mitigations entity, then INITIAL DATA tab
+
+![alt text]({FE7255FC-AF99-4224-A56A-47DA10941159}.png)
+
+2. Click on Add button and fill in the fields to create a record
+
+![alt text]({FE7255FC-AF99-4224-A56A-47DA10941159}.png)
+
+3. Click on the Value Help to link the new mitigation to a risk
+
+![alt text]({FE7255FC-AF99-4224-A56A-47DA10941159}.png)
 
 
 
