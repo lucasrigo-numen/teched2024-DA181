@@ -11,6 +11,8 @@ In this exercise, we will configure the run configuration and set the database a
 
 2. Select the OData option, and select live data and select API_BUSINESS_PARTNER service as API_BUSINESS_PARTNER in Exercise 3.
 
+**Note: if you're working with SAP Business Accelerator Hub, please follow [ex.7.1](./ex7.1/Readme.md)**
+
 <br>![](/exercises/ex7/images/odata.png)
 
 3. Run the Application and this will automatically open a new tab in the browser. 
