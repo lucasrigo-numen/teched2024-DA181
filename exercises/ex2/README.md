@@ -56,24 +56,24 @@ Generate sample data. for risks and mitigations
 
 1. Open the Risks entity, then INITIAL DATA tab
 
-![alt text]({FE7255FC-AF99-4224-A56A-47DA10941159}.png)
+![alt text](/exercises/ex2/images/risks-initial-data.png)
 
 2. Click on Add button and fill in the fields to create a record
 
-![alt text]({FE7255FC-AF99-4224-A56A-47DA10941159}.png)
+![alt text](/exercises/ex2/images/risks-add-record.png)
 
 
 3. Open the Mitigations entity, then INITIAL DATA tab
 
-![alt text]({FE7255FC-AF99-4224-A56A-47DA10941159}.png)
+![alt text](/exercises/ex2/images/mitigations-intial-data.png)
 
 2. Click on Add button and fill in the fields to create a record
 
-![alt text]({FE7255FC-AF99-4224-A56A-47DA10941159}.png)
+![alt text](/exercises/ex2/images/mitigations-add-record.png)
 
 3. Click on the Value Help to link the new mitigation to a risk
 
-![alt text]({FE7255FC-AF99-4224-A56A-47DA10941159}.png)
+![alt text](/exercises/ex2/images/mitigations-link-to-risk.png)
 
 
 
