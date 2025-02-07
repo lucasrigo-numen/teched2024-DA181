@@ -47,8 +47,10 @@ In this exercise, you will extend your CAP service with the consumption of an ex
 ![alt text]({005DDCF5-7FBB-4F28-B6A6-E19DC936DA59}.png)
 
 6. Under Projection, choose 'BusinessPartnerA2X.A_BusinessPartner'
+   
+**NOTE**: make sure the 'Enable draft editing' checkbox in unchecked.
 
-![alt text]({075B66DC-6F5D-4F30-BFF4-629B6E949BC4}.png)
+![alt text](./images/disabled%20draft%20editing.png)
 
 7. Uncheck all properties, and choose only BusinessPartner, FirstName and LastName and save.
 
